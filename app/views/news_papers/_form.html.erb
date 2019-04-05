@@ -1,0 +1,27 @@
+<%= form_with(model: news_paper, local: true) do |form| %>
+  <% if news_paper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(news_paper.errors.count, "error") %> prohibited this news_paper from being saved:</h2>
+
+      <ul>
+      <% news_paper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, NewsPaper.statuses.keys %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

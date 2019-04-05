@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @news_paper.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @news_paper.status %>
+</p>
+
+<%= link_to 'Edit', edit_news_paper_path(@news_paper) %> |
+<%= link_to 'Back', news_papers_path %>
